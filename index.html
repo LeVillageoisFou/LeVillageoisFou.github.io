@@ -3,10 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SYLVA — L'Éveil du Bois Vivant</title>
+  <title>CALGARA — L'Éveil de la Matière</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
+  <!-- Script pour le modèle 3D -->
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,9 +17,10 @@
   <div class="grain"></div>
 
   <nav>
-    <div class="nav-mark">SYLVA<span>·</span></div>
+    <div class="nav-mark">CALGARA<span>·</span></div>
     <ul class="nav-links">
       <li><a href="#manifeste">Manifeste</a></li>
+      <li><a href="#modele-3d">Objet 3D</a></li>
       <li><a href="#formes">Manifestations</a></li>
       <li><a href="#grains">Grains</a></li>
       <li><a href="#philosophie">Philosophie</a></li>
@@ -32,12 +36,33 @@
       <path class="root-path c" d="M600,800 C560,720 500,690 470,600 C445,527 480,470 430,410 C395,368 340,350 300,300" style="animation-delay:0.5s"/>
     </svg>
     <div class="hero-content">
-      <div class="eyebrow">Essence végétale · Force tranquille</div>
-      <h1 class="mark">SYLVA</h1>
+      <div class="eyebrow">Essence minérale & végétale · Force tranquille</div>
+      <h1 class="mark">CALGARA</h1>
       <p class="hero-sub">Une identité visuelle née de la sève, du grain et de la croissance silencieuse — l'ambiance d'un pouvoir qui ne détruit pas, mais qui bâtit, racine après racine.</p>
     </div>
     <div class="scroll-cue"><span>Descendre</span><div class="stem"></div></div>
   </header>
+
+  <!-- Nouvelle section dédiée au Modèle 3D rotatif -->
+  <section id="modele-3d" class="section-3d">
+    <div class="section-inner">
+      <div class="eyebrow-line reveal">Immersion</div>
+      <h2 class="reveal" style="font-family:var(--display); font-weight:500; font-size:clamp(2rem,4vw,3rem); max-width:640px; margin-bottom: 40px;">L'objet en rotation permanente</h2>
+      
+      <div class="viewer-container reveal">
+        <!-- Remplacez le lien src par le lien de votre propre fichier .glb ou .gltf -->
+        <model-viewer 
+          src="https://modelviewer.dev/shared-assets/models/Astronaut.glb" 
+          alt="Modèle 3D de CALGARA" 
+          auto-rotate 
+          camera-controls 
+          disable-zoom
+          shadow-intensity="1">
+        </model-viewer>
+        <div class="viewer-hint">Cliquez et glissez pour examiner l'objet sous tous les angles</div>
+      </div>
+    </div>
+  </section>
 
   <section id="manifeste">
     <div class="section-inner manifesto">
@@ -46,8 +71,8 @@
         <h2>Le bois ne <em>combat</em> pas.<br>Il <em>pousse</em>.</h2>
       </div>
       <div class="reveal">
-        <p>Là où d'autres forces cherchent la vitesse ou la violence, celle du bois avance par patience. Elle enveloppe plutôt qu'elle ne frappe, elle enracine plutôt qu'elle ne s'impose. Chaque geste est une extension du vivant : une branche qui se tend, une écorce qui se referme, une canopée qui protège sans écraser.</p>
-        <p>SYLVA est un langage visuel construit autour de cette idée : la puissance comme processus organique. Grain du chêne, patine du lichen, chaleur ambrée de la sève — une matière qui respire et qui se souvient de sa croissance.</p>
+        <p>Là où d'autres forces cherchent la vitesse ou la violence, celle de CALGARA avance par patience. Elle enveloppe plutôt qu'elle ne frappe, elle enracine plutôt qu'elle ne s'impose. Chaque geste est une extension du vivant : une branche qui se tend, une écorce qui se referme, une canopée qui protège sans écraser.</p>
+        <p>CALGARA est un langage visuel construit autour de cette idée : la puissance comme processus organique. Grain du chêne, patine du lichen, chaleur ambrée de la sève — une matière qui respire et qui se souvient de sa croissance.</p>
       </div>
     </div>
   </section>
@@ -109,20 +134,20 @@
   <section class="quote-section" id="philosophie">
     <div class="section-inner reveal">
       <blockquote>« On ne dresse pas une forêt. <span>On la laisse pousser</span>, et on apprend à marcher dans son ombre. »</blockquote>
-      <div class="quote-attr">— Principe fondateur de SYLVA</div>
+      <div class="quote-attr">— Principe fondateur de CALGARA</div>
     </div>
   </section>
 
   <footer>
     <div class="footer-top">
       <div>
-        <div class="footer-mark">SYLVA<span>·</span></div>
+        <div class="footer-mark">CALGARA<span>·</span></div>
         <p class="footer-tag">Identité visuelle explorant l'esthétique organique du pouvoir végétal — grain, sève et croissance.</p>
       </div>
       <div class="footer-cols">
         <div class="footer-col">
           <h4>Explorer</h4>
-          <ul><li>Manifeste</li><li>Manifestations</li><li>Grains</li><li>Philosophie</li></ul>
+          <ul><li>Manifeste</li><li>Objet 3D</li><li>Manifestations</li><li>Grains</li><li>Philosophie</li></ul>
         </div>
         <div class="footer-col">
           <h4>Studio</h4>
@@ -131,7 +156,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>SYLVA — Projet visuel fictif, sans lien avec une œuvre existante</span>
+      <span>CALGARA — Projet visuel fictif, sans lien avec une œuvre existante</span>
       <span>Grain, sève, silence</span>
     </div>
   </footer>
