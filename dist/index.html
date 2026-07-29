@@ -93,7 +93,7 @@
     --body: 'Manrope', sans-serif;
     --hand: 'Caveat', cursive;
 
-    --img-hero: url('https://media.discordapp.net/attachments/1148627064832929872/1502230764283105280/2026-05-07_17.20.19.png?ex=6a6b0fec&is=6a69be6c&hm=0b706b142637c578bb154ffb96021a2c73eeba113f73c8d5c021dd91986ca225&=&format=webp&quality=lossless&width=1625&height=854');
+    --img-hero: url('https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=1920&auto=format&fit=crop');
     --img-moss: url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1920&auto=format&fit=crop');
     --img-ancient: url('https://images.unsplash.com/photo-1509198397868-475647b2a1e5?q=80&w=1920&auto=format&fit=crop');
     --img-fog: url('https://images.unsplash.com/photo-1516410529446-2c777cb7366d?q=80&w=1920&auto=format&fit=crop');
@@ -192,11 +192,7 @@
   .root-path.b{ stroke:var(--moss-soft); opacity:0.4; stroke-width:1.2; }
   @keyframes grow{ to{ stroke-dashoffset:0; } }
   @keyframes sap-pulse{ 0%,100%{ opacity:0.4; } 50%{ opacity:0.9; } }
-  .trunk-rings{ position:absolute; left:50%; top:46%; transform:translate(-50%,-50%); width:min(70vw,620px); height:min(70vw,620px); z-index:0; opacity:0.9; pointer-events:none; }
-  .trunk-rings circle{ fill:none; stroke:var(--gold-soft); stroke-width:1; opacity:0; transform-origin:center; }
-  .trunk-rings circle.core{ fill:rgba(185,28,28,0.15); stroke:var(--moss-soft); }
-  .trunk-rings.play circle{ animation:ring-grow 1.6s cubic-bezier(.2,.8,.2,1) forwards; }
-  @keyframes ring-grow{ from{ opacity:0; transform:scale(0.7); } to{ opacity:0.9; transform:scale(1); } }
+to{ opacity:0.9; transform:scale(1); } }
   .hero-content{ position:relative; z-index:2; padding:0 6vw; max-width:960px; margin:0 auto; }
   .crest{ width:96px; height:96px; margin:0 auto 24px; border-radius:50%; border:2px solid var(--gold-soft); display:flex; align-items:center; justify-content:center;
     background:radial-gradient(circle, rgba(185,28,28,0.5), rgba(7,9,12,0.6)); opacity:0; animation:rise 1s ease .15s forwards; box-shadow:0 0 25px rgba(220,38,38,0.4); }
@@ -220,61 +216,103 @@
   .btn-ghost:hover::after{ transform:scaleX(1); }
   .btn-ghost:hover{ border-color:var(--gold-soft); background:rgba(239,68,68,0.1); }
 
-  /* ==================================================================
-     PAGE 2 — TAXES & REDEVANCES
-     ================================================================== */
-  #page-taxes{ padding:140px 6vw 100px; background:radial-gradient(ellipse 60% 40% at 50% 0%, rgba(185,28,28,0.15), transparent 60%), var(--ink-2); }
-  
-  .gauge-banner {
-    background: linear-gradient(160deg, rgba(21, 25, 33, 0.95), rgba(14, 18, 23, 0.95));
-    border: 1px solid var(--line);
-    border-radius: 6px;
-    padding: 28px;
-    margin-bottom: 50px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-  }
-  .gauge-meta-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; }
-  .gauge-title-badge { font-family:var(--display); font-size:1.2rem; font-weight:700; color:var(--gold-soft); display:flex; align-items:center; gap:10px; }
-  .gauge-percent-text { font-family:var(--display); font-size:2rem; font-weight:700; color:#fff; }
-  .gauge-track { width:100%; height:16px; background:rgba(0,0,0,0.6); border-radius:8px; overflow:hidden; border:1px solid rgba(239,68,68,0.2); }
-  .gauge-fill { height:100%; background:linear-gradient(90deg, #991B1B, #DC2626, #F87171); border-radius:8px; transition:width 0.8s ease; box-shadow:0 0 15px rgba(220,38,38,0.6); }
-  .gauge-sub-info { display:flex; justify-content:space-between; margin-top:10px; font-size:0.78rem; color:rgba(226,232,240,0.6); }
 
-  .tax-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:24px; margin-top:30px; }
-  .tax-card {
-    background: linear-gradient(160deg, rgba(21, 25, 33, 0.9), rgba(14, 18, 23, 0.95));
-    border: 1px solid var(--line);
-    border-radius: 6px;
-    padding: 28px;
-    position: relative;
-    overflow: hidden;
-    display: flex; flex-direction: column;
-    transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
-  }
-  .tax-card:hover { transform: translateY(-4px); border-color: var(--gold-soft); box-shadow: 0 12px 30px rgba(220, 38, 38, 0.2); }
-  
-  .card-top { display:flex; justify-content:space-between; margin-bottom:16px; align-items:center; }
-  .card-tag { font-size:0.68rem; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold-soft); }
-  .card-price { font-family:var(--display); font-size:1.4rem; font-weight:700; color:#ffffff; }
+  /* ═══════════════════════════════════════════════════
+     PAGE 2 — TAXES & REDEVANCES (REDESIGN)
+     ═══════════════════════════════════════════════════ */
+  #page-taxes{ padding:120px 6vw 80px; background:radial-gradient(ellipse 60% 40% at 50% 0%, rgba(185,28,28,0.12), transparent 60%), var(--ink-2); }
+  .tax-hero{ text-align:center; margin-bottom:40px; }
+  .tax-hero-inner{ max-width:680px; margin:0 auto; }
 
-  .card-title { font-size:1.25rem; font-weight:700; color:#fff; margin-bottom:10px; }
-  .card-desc { font-size:0.88rem; color:rgba(226,232,240,0.7); line-height:1.5; margin-bottom:22px; flex-grow:1; font-weight:300; }
+  /* ---- KPI Row ---- */
+  .tax-kpi-row{ display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-bottom:32px; max-width:1140px; margin-inline:auto; }
+  @media(max-width:900px){ .tax-kpi-row{ grid-template-columns:repeat(2,1fr); } }
+  @media(max-width:480px){ .tax-kpi-row{ grid-template-columns:1fr; } }
+  .tax-kpi-card{ background:linear-gradient(160deg, rgba(21,25,33,0.9), rgba(14,18,23,0.95)); border:1px solid var(--line); border-radius:8px; padding:18px 20px; text-align:center; transition:transform .25s ease, border-color .25s ease; }
+  .tax-kpi-card:hover{ transform:translateY(-3px); border-color:rgba(239,68,68,0.4); }
+  .tax-kpi-label{ font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; color:rgba(226,232,240,0.5); font-weight:700; margin-bottom:8px; }
+  .tax-kpi-value{ font-family:var(--display); font-size:2.2rem; font-weight:700; line-height:1.1; }
+  .tax-kpi-delta{ font-size:0.78rem; margin-top:6px; font-weight:600; }
+  .tax-kpi-positive{ color:#4ade80; }
+  .tax-kpi-danger{ color:#f87171; }
+  .tax-kpi-neutral{ color:rgba(226,232,240,0.45); }
 
-  .card-footer { display:flex; justify-content:space-between; align-items:center; border-top:1px solid rgba(239,68,68,0.15); padding-top:16px; }
-  .card-reward { font-size:0.75rem; font-weight:700; color:var(--moss-soft); }
-  .btn-pay { background:var(--gold); border:none; color:#fff; font-size:0.78rem; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; padding:10px 18px; border-radius:4px; transition:all 0.2s ease; box-shadow:0 0 10px rgba(220,38,38,0.3); }
-  .btn-pay:hover { background:#ef4444; transform:translateY(-1px); box-shadow:0 0 20px rgba(239,68,68,0.6); }
+  /* ---- Gauge ---- */
+  .tax-gauge-section{ max-width:1140px; margin:0 auto 32px; background:linear-gradient(160deg, rgba(21,25,33,0.95), rgba(14,18,23,0.95)); border:1px solid var(--line); border-radius:8px; padding:24px 28px; }
+  .tax-gauge-header{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:12px; flex-wrap:wrap; gap:8px; }
+  .tax-gauge-title{ font-family:var(--display); font-size:1.1rem; font-weight:700; color:var(--gold-soft); }
+  .tax-gauge-target{ font-size:0.75rem; color:rgba(226,232,240,0.5); letter-spacing:0.08em; }
+  .tax-gauge-track{ width:100%; height:14px; background:rgba(0,0,0,0.5); border-radius:7px; overflow:hidden; border:1px solid rgba(239,68,68,0.15); }
+  .tax-gauge-fill{ height:100%; background:linear-gradient(90deg, #7F1D1D, #DC2626, #F87171); border-radius:7px; transition:width 0.8s cubic-bezier(.2,.8,.2,1); box-shadow:0 0 15px rgba(220,38,38,0.4); }
+  .tax-gauge-meta{ display:flex; justify-content:space-between; margin-top:8px; font-size:0.72rem; color:rgba(226,232,240,0.4); font-weight:600; }
 
-  /* KATANA SLASH LINE & MANGA STAMP EFFECT */
-  .katana-slash-line { position:absolute; top:0; left:-100%; width:200%; height:2px; background:#ffffff; box-shadow:0 0 15px var(--gold-soft); transform:rotate(-35deg); opacity:0; pointer-events:none; z-index:10; }
-  .katana-slash-line.slash-active { animation:slashEffect 0.3s ease-out forwards; }
-  @keyframes slashEffect { 0% { left: -100%; top: 0%; opacity: 1; } 100% { left: 100%; top: 100%; opacity: 0; } }
+  /* ---- Toolbar ---- */
+  .tax-toolbar{ max-width:1140px; margin:0 auto 20px; display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
+  .tax-search-input{ flex:1; min-width:200px; padding:10px 14px; background:rgba(7,9,12,0.8); border:1px solid rgba(239,68,68,0.25); border-radius:6px; color:#fff; font-family:var(--body); font-size:0.85rem; }
+  .tax-search-input:focus{ border-color:var(--gold-soft); outline:none; }
+  .tax-select{ padding:10px 14px; background:rgba(7,9,12,0.8); border:1px solid rgba(239,68,68,0.25); border-radius:6px; color:#fff; font-family:var(--body); font-size:0.85rem; min-width:140px; }
+  .tax-select:focus{ border-color:var(--gold-soft); outline:none; }
+  .tax-toolbar-spacer{ flex:1; }
+  .tax-btn{ padding:9px 16px; border-radius:6px; font-size:0.78rem; font-weight:700; letter-spacing:0.06em; cursor:pointer; transition:all .2s ease; border:1px solid rgba(239,68,68,0.3); background:rgba(239,68,68,0.1); color:#fff; font-family:var(--body); }
+  .tax-btn:hover{ background:rgba(239,68,68,0.2); border-color:rgba(239,68,68,0.5); }
+  .tax-btn-primary{ background:var(--gold); border-color:var(--gold); color:#fff; box-shadow:0 0 12px rgba(220,38,38,0.3); }
+  .tax-btn-primary:hover{ background:#ef4444; border-color:#ef4444; box-shadow:0 0 20px rgba(239,68,68,0.5); }
+  .tax-btn-danger{ background:rgba(127,29,29,0.3); border-color:rgba(220,38,38,0.4); color:#fca5a5; }
+  .tax-btn-danger:hover{ background:#991B1B; border-color:#ef4444; }
+  .tax-btn-admin{ background:rgba(168,85,247,0.15); border-color:rgba(168,85,247,0.4); color:#d8b4fe; }
+  .tax-btn-admin:hover{ background:rgba(168,85,247,0.3); }
 
-  .manga-stamp { position:absolute; top:50%; left:50%; transform:translate(-50%, -50%) scale(2) rotate(-15deg); width:130px; height:130px; border:4px double var(--gold); border-radius:50%; display:flex; flex-direction:column; align-items:center; justify-content:center; color:var(--gold); opacity:0; pointer-events:none; z-index:12; background:rgba(220,38,38,0.12); box-shadow:0 0 20px rgba(220,38,38,0.5); }
-  .manga-stamp.stamp-active { animation:stampImpact 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
-  @keyframes stampImpact { 0% { opacity: 0; transform: translate(-50%, -50%) scale(2.5) rotate(-30deg); } 100% { opacity: 0.95; transform: translate(-50%, -50%) scale(1) rotate(-15deg); } }
-  .manga-stamp .kanji { font-family:var(--display); font-size:2.4rem; font-weight:800; line-height:1; }
-  .manga-stamp .stamp-label { font-size:0.62rem; font-weight:800; letter-spacing:1px; }
+  /* ---- Admin Editor ---- */
+  .tax-admin-editor{ max-width:1140px; margin:0 auto 24px; background:linear-gradient(160deg, rgba(21,25,33,0.95), rgba(14,18,23,0.98)); border:1px solid rgba(239,68,68,0.3); border-radius:8px; padding:24px 28px; }
+  .tax-editor-head h4{ font-family:var(--display); font-size:1.05rem; color:var(--gold-soft); margin-bottom:6px; }
+  .tax-editor-head p{ font-size:0.8rem; color:rgba(226,232,240,0.5); margin-bottom:18px; }
+  .tax-form-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+  @media(max-width:900px){ .tax-form-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media(max-width:500px){ .tax-form-grid{ grid-template-columns:1fr; } }
+  .tax-form-grid label{ display:block; font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; color:rgba(226,232,240,0.6); font-weight:700; margin-bottom:4px; }
+  .tax-form-grid input, .tax-form-grid select{ width:100%; padding:9px 11px; background:rgba(7,9,12,0.85); border:1px solid rgba(239,68,68,0.25); border-radius:5px; color:#fff; font-family:var(--body); font-size:0.84rem; }
+  .tax-form-grid input:focus, .tax-form-grid select:focus{ border-color:var(--gold-soft); outline:none; }
+  .tax-form-actions{ display:flex; gap:10px; margin-top:18px; align-items:center; flex-wrap:wrap; }
+  .tax-formula-hint{ font-size:0.72rem; color:rgba(226,232,240,0.4); margin-left:auto; }
+
+  /* ---- Table ---- */
+  .tax-table-wrap{ max-width:1140px; margin:0 auto 50px; border:1px solid var(--line); border-radius:8px; overflow:hidden; background:linear-gradient(160deg, rgba(21,25,33,0.9), rgba(14,18,23,0.95)); }
+  .tax-table{ width:100%; border-collapse:collapse; font-size:0.85rem; }
+  .tax-table thead{ background:rgba(7,9,12,0.7); }
+  .tax-table th{ padding:12px 14px; text-align:left; font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold-soft); font-weight:700; border-bottom:1px solid rgba(239,68,68,0.2); white-space:nowrap; }
+  .tax-table td{ padding:11px 14px; border-bottom:1px solid rgba(239,68,68,0.1); color:var(--parchment); vertical-align:middle; }
+  .tax-table tbody tr:last-child td{ border-bottom:none; }
+  .tax-table tbody tr:hover td{ background:rgba(239,68,68,0.05); }
+  .tax-table .tax-num{ text-align:right; font-variant-numeric:tabular-nums; }
+  .tax-table .tax-center{ text-align:center; }
+  .tax-table .tax-name{ font-weight:600; color:#fff; }
+  .tax-table .tax-clan-tag{ display:inline-block; padding:2px 8px; border-radius:5px; font-size:0.7rem; font-weight:700; background:rgba(239,68,68,0.12); color:var(--gold-soft); border:1px solid rgba(239,68,68,0.2); }
+  .tax-table .tax-rank-jonin{ background:rgba(220,38,38,0.15); color:#fca5a5; border:1px solid rgba(220,38,38,0.3); }
+  .tax-table .tax-rank-chunin{ background:rgba(168,85,247,0.15); color:#d8b4fe; border:1px solid rgba(168,85,247,0.3); }
+  .tax-table .tax-rank-genin{ background:rgba(99,179,237,0.12); color:#93c5fd; border:1px solid rgba(99,179,237,0.25); }
+  .tax-table .tax-status-paid{ color:#4ade80; font-weight:600; }
+  .tax-table .tax-status-unpaid{ color:#f87171; font-weight:600; }
+  .tax-table .tax-row-actions{ opacity:0; transition:opacity .2s ease; white-space:nowrap; }
+  .tax-table tbody tr:hover .tax-row-actions{ opacity:1; }
+  .tax-table .tax-row-actions button{ background:none; border:none; color:rgba(226,232,240,0.5); cursor:pointer; font-size:0.85rem; padding:3px 6px; border-radius:4px; transition:all .15s; }
+  .tax-table .tax-row-actions button:hover{ color:#fff; background:rgba(239,68,68,0.2); }
+  .tax-group-header{ background:rgba(7,9,12,0.6) !important; }
+  .tax-group-header td{ padding:8px 14px !important; font-size:0.72rem; font-weight:700; color:rgba(226,232,240,0.5); letter-spacing:0.08em; text-transform:uppercase; border-bottom:1px solid rgba(239,68,68,0.15) !important; }
+
+  /* ---- Tax Cards ---- */
+  .tax-cards-section{ max-width:1140px; margin:0 auto; padding-top:20px; }
+  .tax-cards-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:18px; margin-top:24px; }
+  .tax-card{ background:linear-gradient(160deg, rgba(21,25,33,0.9), rgba(14,18,23,0.95)); border:1px solid var(--line); border-radius:8px; padding:26px; position:relative; overflow:hidden; display:flex; flex-direction:column; transition:transform .3s ease, border-color .3s ease, box-shadow .3s ease; }
+  .tax-card:hover{ transform:translateY(-4px); border-color:var(--gold-soft); box-shadow:0 14px 35px rgba(220,38,38,0.18); }
+  .tax-card-top{ display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; }
+  .tax-card-tag{ font-size:0.65rem; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold-soft); }
+  .tax-card-price{ font-family:var(--display); font-size:1.5rem; font-weight:700; color:#fff; }
+  .tax-card-title{ font-size:1.15rem; font-weight:700; color:#fff; margin-bottom:8px; }
+  .tax-card-desc{ font-size:0.85rem; color:rgba(226,232,240,0.65); line-height:1.5; margin-bottom:20px; flex-grow:1; }
+  .tax-card-footer{ display:flex; justify-content:space-between; align-items:center; border-top:1px solid rgba(239,68,68,0.15); padding-top:16px; }
+  .tax-card-reward{ font-size:0.72rem; font-weight:700; color:var(--moss-soft); }
+  .tax-card-btn{ background:var(--gold); border:none; color:#fff; font-size:0.78rem; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; padding:9px 16px; border-radius:5px; cursor:pointer; transition:all .2s ease; box-shadow:0 0 10px rgba(220,38,38,0.25); }
+  .tax-card-btn:hover{ background:#ef4444; transform:translateY(-1px); box-shadow:0 0 18px rgba(239,68,68,0.5); }
 
   /* ==================================================================
      PAGE 3 — IDENTITE : DOSSIER CITOYEN + RADAR
@@ -431,6 +469,8 @@
   .footer-col ul li button:hover{ color:var(--gold-soft); }
   .footer-bottom{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-size:0.68rem; color:var(--moss-soft); padding-top:24px; margin-top:30px; border-top:1px solid var(--line); max-width:1140px; margin-inline:auto; font-weight:600; }
 </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<base target="_blank">
 </head>
 <body>
 
@@ -476,15 +516,12 @@
   <div class="hero">
     <div class="hero-bg"></div>
     <div class="hero-fog"></div>
-    <svg class="trunk-rings" viewBox="0 0 400 400">
-      <circle class="core" cx="200" cy="200" r="14"/>
-      <circle cx="200" cy="200" r="42"/>
-      <circle cx="200" cy="200" r="74"/>
-      <circle cx="200" cy="200" r="108"/>
-      <circle cx="200" cy="200" r="144"/>
-      <circle cx="200" cy="200" r="182"/>
-    </svg>
-    <svg id="hero-roots" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMax slice">
+    <!-- Kunai 3D -->
+    <div id="kunai-intro" style="position:absolute;inset:0;z-index:5;pointer-events:none;overflow:hidden;">
+      <div id="kunai-canvas-wrap" style="position:absolute;right:-400px;top:50%;transform:translateY(-50%);width:400px;height:400px;transition:right 1.2s cubic-bezier(.2,.8,.2,1);"></div>
+    </div>
+
+<svg id="hero-roots" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMax slice">
       <path class="root-path" d="M600,800 C560,650 640,560 560,460 C500,380 420,380 360,300 C310,235 300,160 250,90"/>
       <path class="root-path b" d="M600,800 C630,640 560,540 640,440 C700,365 790,360 850,270 C900,200 910,130 960,60"/>
       <path class="root-path" d="M600,800 C640,700 720,660 760,560 C795,478 760,410 820,340 C865,290 930,270 980,210" style="animation-delay:.3s"/>
@@ -506,117 +543,154 @@
 
 <!-- ============ PAGE 2 — TAXES & REDEVANCES ============ -->
 <div class="page" id="page-taxes" data-page="taxes">
-  <div class="bio-head">
-    <div class="eyebrow-line" style="justify-content:center;">ADMINISTRATION FINANCIÈRE</div>
-    <h2 class="page-title">Système des Taxes <em>& Redevances</em></h2>
+  <div class="tax-hero">
+    <div class="tax-hero-inner">
+      <div class="eyebrow-line" style="justify-content:center;">ADMINISTRATION FINANCIÈRE</div>
+      <h2 class="page-title">Taxes <em>& Redevances</em></h2>
+    </div>
   </div>
 
-  <div class="gauge-banner">
-    <div class="gauge-meta-header">
-      <div class="gauge-title-badge">🔥 JAUGE DE CONFORMITÉ COMMUNAUTAIRE (VOLONTÉ DU FEU)</div>
-      <div class="gauge-percent-text" id="gaugePercentText">74%</div>
+  <!-- KPI Row -->
+  <div class="tax-kpi-row">
+    <div class="tax-kpi-card">
+      <div class="tax-kpi-label">Citoyens enregistrés</div>
+      <div class="tax-kpi-value" id="kpiCitizens">0</div>
+      <div class="tax-kpi-delta tax-kpi-neutral"><span id="kpiClans">0</span> clans actifs</div>
     </div>
-    <div class="gauge-track">
-      <div class="gauge-fill" id="fireGaugeFill" style="width: 74%;"></div>
+    <div class="tax-kpi-card">
+      <div class="tax-kpi-label">Total collecté</div>
+      <div class="tax-kpi-value tax-kpi-positive" id="kpiCollected">0</div>
+      <div class="tax-kpi-delta tax-kpi-positive">Ryos</div>
     </div>
-    <div class="gauge-sub-info">
+    <div class="tax-kpi-card">
+      <div class="tax-kpi-label">Impayés</div>
+      <div class="tax-kpi-value tax-kpi-danger" id="kpiUnpaid">0</div>
+      <div class="tax-kpi-delta tax-kpi-danger" id="kpiUnpaidCount">0 citoyen</div>
+    </div>
+    <div class="tax-kpi-card">
+      <div class="tax-kpi-label">Conformité</div>
+      <div class="tax-kpi-value" style="color:var(--gold-soft);" id="kpiCompliance">0%</div>
+      <div class="tax-kpi-delta tax-kpi-neutral">Objectif: 2M Ryos</div>
+    </div>
+  </div>
+
+  <!-- Gauge -->
+  <div class="tax-gauge-section">
+    <div class="tax-gauge-header">
+      <span class="tax-gauge-title">Jauge de conformité communautaire</span>
+      <span class="tax-gauge-target">Objectif: 2 000 000 Ryos</span>
+    </div>
+    <div class="tax-gauge-track">
+      <div class="tax-gauge-fill" id="fireGaugeFill" style="width:74%"></div>
+    </div>
+    <div class="tax-gauge-meta">
       <span>0 Ryos</span>
-      <span>🎯 Objectif Serveur : 2 000 000 Ryos (Déclenchement Événement Double XP)</span>
+      <span>Double XP à 100%</span>
       <span>2 000 000 Ryos</span>
     </div>
   </div>
 
-  <div class="tax-grid">
-    <div class="tax-card" id="card-defense">
-      <div class="katana-slash-line"></div>
-      <div class="manga-stamp" id="stamp-defense">
-        <span class="kanji">済</span>
-        <span class="stamp-label">VALIDÉ HOKAGE</span>
-      </div>
-      <div class="card-top">
-        <span class="card-tag">SÉCURITÉ ANBU</span>
-        <span class="card-price">500 Ryos</span>
-      </div>
-      <h3 class="card-title">Taxe de Défense du Village</h3>
-      <p class="card-desc">Financement des barrières de détection de chakra, des patrouilles ANBU et de la protection des frontières.</p>
-      <div class="card-footer">
-        <span class="card-reward">+150 XP Défense</span>
-        <button class="btn-pay" onclick="payTax('card-defense', 500, 150)">Payer</button>
-      </div>
-    </div>
+  <!-- Toolbar -->
+  <div class="tax-toolbar">
+    <input type="search" class="tax-search-input" id="taxSearch" placeholder="Rechercher un ninja…" oninput="renderTaxRegistry()">
+    <select class="tax-select" id="taxClanFilter" onchange="renderTaxRegistry()">
+      <option value="all">Tous les clans</option>
+    </select>
+    <select class="tax-select" id="taxRankFilter" onchange="renderTaxRegistry()">
+      <option value="all">Tous les grades</option>
+      <option value="Jonin">Jonin</option>
+      <option value="Chunin">Chunin</option>
+      <option value="Genin">Genin</option>
+    </select>
+    <div class="tax-toolbar-spacer"></div>
+    <button class="tax-btn tax-btn-primary" id="taxAddBtn" onclick="openTaxEditor()">+ Ajouter un ninja</button>
+    <button class="tax-btn tax-btn-admin hidden" id="taxAdminToggle" onclick="toggleTaxEditor()">⚙ Modifier le registre</button>
+  </div>
 
-    <div class="tax-card" id="card-ichiraku">
-      <div class="katana-slash-line"></div>
-      <div class="manga-stamp" id="stamp-ichiraku">
-        <span class="kanji">忍</span>
-        <span class="stamp-label">VALIDÉ ICHIRAKU</span>
-      </div>
-      <div class="card-top">
-        <span class="card-tag">BONUS VITALITÉ</span>
-        <span class="card-price">150 Ryos</span>
-      </div>
-      <h3 class="card-title">Redevance Ichiraku Ramen</h3>
-      <p class="card-desc">Soutien au stand emblématique de Teuchi avec ravitaillement gastronomique et bonus de vitalité.</p>
-      <div class="card-footer">
-        <span class="card-reward">+250 XP Vitalité</span>
-        <button class="btn-pay" onclick="payTax('card-ichiraku', 150, 250)">Déguster & Payer</button>
-      </div>
+  <!-- Admin Editor -->
+  <div id="taxAdminEditor" class="tax-admin-editor hidden">
+    <div class="tax-editor-head">
+      <h4>Panneau du Hokage — Gestion du registre</h4>
+      <p>Le total se calcule automatiquement (Hebdo + missions), mais tu peux le corriger à la main.</p>
     </div>
-
-    <div class="tax-card" id="card-reconstruction">
-      <div class="katana-slash-line"></div>
-      <div class="manga-stamp" id="stamp-reconstruction">
-        <span class="kanji">愛</span>
-        <span class="stamp-label">DONATEUR NOBLE</span>
-      </div>
-      <div class="card-top">
-        <span class="card-tag">SOLIDARITÉ</span>
-        <span class="card-price" id="donValText">300 Ryos</span>
-      </div>
-      <h3 class="card-title">Fonds de Reconstruction</h3>
-      <p class="card-desc">Don libre sous contrôle pour aider Yamato et les charpentiers à reconstruire les infrastructures.</p>
-      <div style="margin-bottom:16px;">
-        <input type="range" id="donRange" min="50" max="2500" step="50" value="300" style="width:100%; accent-color:var(--gold-soft);" oninput="document.getElementById('donValText').innerText=this.value+' Ryos'">
-      </div>
-      <div class="card-footer">
-        <span class="card-reward">Don Personnalisé</span>
-        <button class="btn-pay" onclick="payDonation()">Donner</button>
-      </div>
+    <div class="tax-form-grid">
+      <label>Nom du ninja<input id="tfName" type="text" placeholder="Ex: Naruto Uzumaki" oninput="autoDetectClan()"></label>
+      <label>Clan<select id="tfClan"></select></label>
+      <label>Grade<select id="tfRank" onchange="autoFillWeekly()"><option value="Jonin">Jonin</option><option value="Chunin">Chunin</option><option value="Genin" selected>Genin</option></select></label>
+      <label>Taxe hebdo (Ryos)<input id="tfWeekly" type="number" oninput="recalcTaxTotal()"></label>
+      <label>Missions Rang S<input id="tfS" type="number" min="0" value="0" oninput="recalcTaxTotal()"></label>
+      <label>Missions Rang A<input id="tfA" type="number" min="0" value="0" oninput="recalcTaxTotal()"></label>
+      <label>Missions Rang B<input id="tfB" type="number" min="0" value="0" oninput="recalcTaxTotal()"></label>
+      <label>Total à payer (Ryos)<input id="tfTotal" type="number"></label>
+      <label>Collecteur<input id="tfCollector" type="text" placeholder="Ex: Shigure"></label>
+      <label>Statut<select id="tfStatus" onchange="onTaxStatusChange()"><option value="Payé">Payé</option><option value="Rien">Non payé</option></select></label>
+      <label id="tfUnpaidWrap">Montant impayé (Ryos)<input id="tfUnpaid" type="number" min="0" value="0"></label>
     </div>
-
-    <div class="tax-card" id="card-academie">
-      <div class="katana-slash-line"></div>
-      <div class="manga-stamp" id="stamp-academie">
-        <span class="kanji">学</span>
-        <span class="stamp-label">VALIDÉ ACADÉMIE</span>
-      </div>
-      <div class="card-top">
-        <span class="card-tag">ÉDUCATION NINJA</span>
-        <span class="card-price">300 Ryos</span>
-      </div>
-      <h3 class="card-title">Taxe d'Académie Ninja</h3>
-      <p class="card-desc">Financement des Kunais d'entraînement, parchemins d'invocations et bourses Iruka-Sensei.</p>
-      <div class="card-footer">
-        <span class="card-reward">+200 XP Ninjutsu</span>
-        <button class="btn-pay" onclick="payTax('card-academie', 300, 200)">Payer</button>
-      </div>
+    <div class="tax-form-actions">
+      <button class="tax-btn tax-btn-primary" onclick="saveTaxEdit()">Enregistrer</button>
+      <button class="tax-btn" onclick="resetTaxForm()">Nouveau ninja</button>
+      <button class="tax-btn tax-btn-danger" id="tfDeleteBtn" onclick="deleteTaxRow(currentTaxEditId)" disabled>Supprimer</button>
+      <span class="tax-formula-hint">Formule: Hebdo + (S×500) + (A×300) + (B×100)</span>
     </div>
+  </div>
 
-    <div class="tax-card" id="card-medicale">
-      <div class="katana-slash-line"></div>
-      <div class="manga-stamp" id="stamp-medicale">
-        <span class="kanji">医</span>
-        <span class="stamp-label">SANTE KONOHA</span>
+  <!-- Table -->
+  <div class="tax-table-wrap">
+    <table class="tax-table">
+      <thead>
+        <tr>
+          <th>Ninja</th><th>Clan</th><th>Grade</th><th class="tax-num">Hebdo</th><th class="tax-center">S</th><th class="tax-center">A</th><th class="tax-center">B</th><th class="tax-num">Total</th><th>Collecteur</th><th>Statut</th><th></th>
+        </tr>
+      </thead>
+      <tbody id="taxTableBody"></tbody>
+    </table>
+  </div>
+
+  <!-- Tax Cards -->
+  <div class="tax-cards-section">
+    <div class="eyebrow-line" style="justify-content:center;margin-bottom:16px;">REDEVANCES DISPONIBLES</div>
+    <h3 class="page-title" style="text-align:center;margin-bottom:32px;font-size:clamp(1.4rem,3vw,2rem);">Contribuer au <em>Village</em></h3>
+    <div class="tax-cards-grid">
+      <div class="tax-card" id="card-defense">
+        <div class="katana-slash-line"></div>
+        <div class="manga-stamp" id="stamp-defense"><span class="kanji">済</span><span class="stamp-label">VALIDÉ HOKAGE</span></div>
+        <div class="tax-card-top"><span class="tax-card-tag">SÉCURITÉ ANBU</span><span class="tax-card-price">500 Ryos</span></div>
+        <h3 class="tax-card-title">Taxe de Défense du Village</h3>
+        <p class="tax-card-desc">Financement des barrières de détection de chakra, des patrouilles ANBU et de la protection des frontières.</p>
+        <div class="tax-card-footer"><span class="tax-card-reward">+150 XP Défense</span><button class="tax-card-btn" onclick="payTax('card-defense',500,150)">Payer</button></div>
       </div>
-      <div class="card-top">
-        <span class="card-tag">SANTÉ & SOINS</span>
-        <span class="card-price">400 Ryos</span>
+      <div class="tax-card" id="card-ichiraku">
+        <div class="katana-slash-line"></div>
+        <div class="manga-stamp" id="stamp-ichiraku"><span class="kanji">忍</span><span class="stamp-label">VALIDÉ ICHIRAKU</span></div>
+        <div class="tax-card-top"><span class="tax-card-tag">BONUS VITALITÉ</span><span class="tax-card-price">150 Ryos</span></div>
+        <h3 class="tax-card-title">Redevance Ichiraku Ramen</h3>
+        <p class="tax-card-desc">Soutien au stand emblématique de Teuchi avec ravitaillement gastronomique et bonus de vitalité.</p>
+        <div class="tax-card-footer"><span class="tax-card-reward">+250 XP Vitalité</span><button class="tax-card-btn" onclick="payTax('card-ichiraku',150,250)">Déguster & Payer</button></div>
       </div>
-      <h3 class="card-title">Dîme Médicale Tsunade</h3>
-      <p class="card-desc">Soutien aux Ninjas Médicaux et approvisionnement de l'Hôpital de Konoha en plantes de soins.</p>
-      <div class="card-footer">
-        <span class="card-reward">+300 XP Iryōjutsu</span>
-        <button class="btn-pay" onclick="payTax('card-medicale', 400, 300)">Payer</button>
+      <div class="tax-card" id="card-reconstruction">
+        <div class="katana-slash-line"></div>
+        <div class="manga-stamp" id="stamp-reconstruction"><span class="kanji">愛</span><span class="stamp-label">DONATEUR NOBLE</span></div>
+        <div class="tax-card-top"><span class="tax-card-tag">SOLIDARITÉ</span><span class="tax-card-price" id="donValText">300 Ryos</span></div>
+        <h3 class="tax-card-title">Fonds de Reconstruction</h3>
+        <p class="tax-card-desc">Don libre sous contrôle pour aider Yamato et les charpentiers à reconstruire les infrastructures.</p>
+        <div style="margin-bottom:16px;"><input type="range" id="donRange" min="50" max="2500" step="50" value="300" style="width:100%;accent-color:var(--gold-soft);" oninput="document.getElementById('donValText').innerText=this.value+' Ryos'"></div>
+        <div class="tax-card-footer"><span class="tax-card-reward">Don Personnalisé</span><button class="tax-card-btn" onclick="payDonation()">Donner</button></div>
+      </div>
+      <div class="tax-card" id="card-academie">
+        <div class="katana-slash-line"></div>
+        <div class="manga-stamp" id="stamp-academie"><span class="kanji">学</span><span class="stamp-label">VALIDÉ ACADÉMIE</span></div>
+        <div class="tax-card-top"><span class="tax-card-tag">ÉDUCATION NINJA</span><span class="tax-card-price">300 Ryos</span></div>
+        <h3 class="tax-card-title">Taxe d'Académie Ninja</h3>
+        <p class="tax-card-desc">Financement des Kunais d'entraînement, parchemins d'invocations et bourses Iruka-Sensei.</p>
+        <div class="tax-card-footer"><span class="tax-card-reward">+200 XP Ninjutsu</span><button class="tax-card-btn" onclick="payTax('card-academie',300,200)">Payer</button></div>
+      </div>
+      <div class="tax-card" id="card-medicale">
+        <div class="katana-slash-line"></div>
+        <div class="manga-stamp" id="stamp-medicale"><span class="kanji">医</span><span class="stamp-label">SANTE KONOHA</span></div>
+        <div class="tax-card-top"><span class="tax-card-tag">SANTÉ & SOINS</span><span class="tax-card-price">400 Ryos</span></div>
+        <h3 class="tax-card-title">Dîme Médicale Tsunade</h3>
+        <p class="tax-card-desc">Soutien aux Ninjas Médicaux et approvisionnement de l'Hôpital de Konoha en plantes de soins.</p>
+        <div class="tax-card-footer"><span class="tax-card-reward">+300 XP Iryōjutsu</span><button class="tax-card-btn" onclick="payTax('card-medicale',400,300)">Payer</button></div>
       </div>
     </div>
   </div>
@@ -1131,6 +1205,9 @@ function updateUserHeaderUI() {
   const box = document.getElementById('userHeaderBox');
   if (!box) return;
 
+  const taxAdminToggle = document.getElementById('taxAdminToggle');
+  if (taxAdminToggle) taxAdminToggle.classList.toggle('hidden', !(currentUser && currentUser.username === 'LeVillageoisFou' && currentUser.role === 'admin'));
+
   if (currentUser) {
     const isBanned = currentUser.is_banned;
     const isAdmin  = ['admin','jonin_admin','chunin_admin'].includes(currentUser.role);
@@ -1479,11 +1556,7 @@ const pages = document.querySelectorAll('.page');
 const navButtons = document.querySelectorAll('[data-page]');
 const gotoButtons = document.querySelectorAll('[data-goto]');
 
-function playRings(){
-  const rings = document.querySelector('.trunk-rings');
-  if(!rings) return;
-  rings.classList.remove('play'); void rings.offsetWidth; rings.classList.add('play');
-  rings.querySelectorAll('circle').forEach((c,i)=>{ c.style.animationDelay = (i*0.12)+'s'; });
+);
 }
 
 function playRadar(){
@@ -1505,7 +1578,7 @@ function showPage(name, originEvent){
   target.classList.add('entering');
   navButtons.forEach(b=>b.classList.toggle('active', b.dataset.page === name));
   window.scrollTo(0,0);
-  if(name === 'accueil') playRings();
+  if(name === 'accueil') { /* rings removed */ }
   if(name === 'identite') { setTimeout(playRadar, 80); updateIdCard(); }
   history.replaceState(null, '', '#'+name);
 }
@@ -1516,9 +1589,10 @@ gotoButtons.forEach(btn=>btn.addEventListener('click', (e)=>showPage(btn.dataset
 // ─── PARTICLES & CURSOR ────────────────────────────────
 window.addEventListener('DOMContentLoaded', ()=>{
   initApp();
+  initKunai3D();
   const hash = location.hash.replace('#','');
   if(hash && document.getElementById('page-'+hash)){ showPage(hash); }
-  else { playRings(); }
+  else { initKunai3D(); }
 
   const field = document.getElementById('particles');
   for(let i=0;i<20;i++){
@@ -1554,5 +1628,346 @@ window.addEventListener('pointermove', (e)=>{
   }, { passive:true });
 </script>
 
+<script>
+// ===== REGISTRE DES TAXES — Redesign 2026 =====
+let taxRows=[
+{id:0,name:'Topioki Uzumaki',weekly:800,rank:'Jonin',s:0,a:2,b:2,total:1600,collector:'Mia',status:'Payé',unpaid:0,clan:'Uzumaki'},
+{id:1,name:'Rengo Nara',weekly:800,rank:'Jonin',s:0,a:0,b:1,total:900,collector:'Shigure',status:'Payé',unpaid:0,clan:'Nara'},
+{id:2,name:'Terasu Senju',weekly:800,rank:'Jonin',s:0,a:2,b:0,total:2050,collector:'Shigure',status:'Payé',unpaid:650,clan:'Senju'},
+{id:3,name:'Fuyo Senju',weekly:800,rank:'Jonin',s:0,a:2,b:0,total:1400,collector:'Rien',status:'Non payé',unpaid:0,clan:'Senju'},
+{id:4,name:'Masaki Senju',weekly:800,rank:'Jonin',s:0,a:0,b:0,total:800,collector:'Shigure',status:'Payé',unpaid:0,clan:'Senju'},
+{id:5,name:'Haruki Senju',weekly:800,rank:'Jonin',s:0,a:0,b:0,total:800,collector:'Rien',status:'Non payé',unpaid:0,clan:'Senju'},
+{id:6,name:'Shizen Uchiha',weekly:800,rank:'Jonin',s:0,a:2,b:3,total:1700,collector:'Shigure',status:'Payé',unpaid:0,clan:'Uchiha'},
+{id:7,name:'Shigure Hyuga',weekly:800,rank:'Jonin',s:0,a:0,b:0,total:800,collector:'Mia',status:'Payé',unpaid:0,clan:'Hyuga'},
+{id:8,name:'Raizen Senju',weekly:800,rank:'Jonin',s:0,a:0,b:1,total:900,collector:'Rien',status:'Non payé',unpaid:0,clan:'Senju'},
+{id:9,name:'Toshiyori Uchiha',weekly:800,rank:'Jonin',s:0,a:0,b:0,total:800,collector:'Rien',status:'Non payé',unpaid:0,clan:'Uchiha'},
+{id:10,name:'Neko Uzumaki',weekly:800,rank:'Jonin',s:0,a:0,b:0,total:800,collector:'Rien',status:'Non payé',unpaid:0,clan:'Uzumaki'},
+{id:11,name:'Chouka Akimichi',weekly:550,rank:'Chunin',s:0,a:0,b:0,total:550,collector:'Shigure',status:'Payé',unpaid:0,clan:'Akimichi'},
+{id:12,name:'Achiro Nara',weekly:550,rank:'Chunin',s:0,a:0,b:3,total:850,collector:'Shigure',status:'Payé',unpaid:0,clan:'Nara'},
+{id:13,name:'Shinzo Uzumaki',weekly:550,rank:'Chunin',s:0,a:1,b:0,total:850,collector:'Shigure',status:'Payé',unpaid:0,clan:'Uzumaki'},
+{id:14,name:'Calgara Senju',weekly:550,rank:'Chunin',s:0,a:0,b:0,total:550,collector:'Rien',status:'Non payé',unpaid:0,clan:'Senju'},
+{id:15,name:'Mikado Uchiha',weekly:550,rank:'Chunin',s:0,a:1,b:1,total:950,collector:'Shigure',status:'Payé',unpaid:0,clan:'Uchiha'},
+{id:16,name:'Rantaro',weekly:550,rank:'Chunin',s:0,a:1,b:0,total:850,collector:'Shigure',status:'Payé',unpaid:0,clan:'Autre'},
+{id:17,name:'Shi Uzumaki',weekly:550,rank:'Chunin',s:0,a:0,b:1,total:650,collector:'Shigure',status:'Payé',unpaid:0,clan:'Uzumaki'},
+{id:18,name:'Kagame Hyuga',weekly:550,rank:'Chunin',s:0,a:0,b:0,total:550,collector:'Rien',status:'Non payé',unpaid:0,clan:'Hyuga'},
+{id:19,name:'Ichiko Senju',weekly:550,rank:'Chunin',s:0,a:1,b:2,total:1050,collector:'Shigure',status:'Payé',unpaid:0,clan:'Senju'},
+{id:20,name:'Aiko Uzumaki',weekly:550,rank:'Chunin',s:0,a:1,b:1,total:950,collector:'Shigure',status:'Payé',unpaid:0,clan:'Uzumaki'},
+{id:21,name:'Fumikage Nara',weekly:550,rank:'Chunin',s:0,a:0,b:0,total:550,collector:'Rien',status:'Non payé',unpaid:0,clan:'Nara'},
+{id:22,name:'Toji Nara',weekly:550,rank:'Chunin',s:0,a:2,b:1,total:1250,collector:'Rien',status:'Non payé',unpaid:0,clan:'Nara'},
+{id:23,name:'Azaru Uchiha',weekly:550,rank:'Chunin',s:0,a:0,b:1,total:650,collector:'Shigure',status:'Payé',unpaid:0,clan:'Uchiha'},
+{id:24,name:'Hikaru Senju',weekly:550,rank:'Chunin',s:0,a:2,b:2,total:1350,collector:'Shigure',status:'Payé',unpaid:0,clan:'Senju'},
+{id:25,name:'Tatsuma Senju',weekly:350,rank:'Genin',s:0,a:1,b:3,total:950,collector:'Shigure',status:'Payé',unpaid:0,clan:'Senju'},
+{id:26,name:'Yuren Senju',weekly:350,rank:'Genin',s:0,a:1,b:0,total:650,collector:'Rien',status:'Non payé',unpaid:0,clan:'Senju'},
+{id:27,name:'Kena Uzumaki',weekly:350,rank:'Genin',s:0,a:0,b:0,total:350,collector:'Rien',status:'Non payé',unpaid:0,clan:'Uzumaki'},
+{id:28,name:'Otsubo Nara',weekly:350,rank:'Genin',s:0,a:0,b:0,total:350,collector:'Shigure',status:'Payé',unpaid:0,clan:'Nara'},
+{id:29,name:'Soja Senju',weekly:350,rank:'Genin',s:0,a:1,b:2,total:850,collector:'Shigure',status:'Payé',unpaid:0,clan:'Senju'},
+{id:30,name:'Batsu Hyuga',weekly:350,rank:'Genin',s:0,a:0,b:0,total:1032,collector:'Rien',status:'Non payé',unpaid:682,clan:'Hyuga'},
+{id:31,name:'Isamu Nara',weekly:350,rank:'Genin',s:0,a:1,b:0,total:650,collector:'Rien',status:'Non payé',unpaid:0,clan:'Nara'},
+{id:32,name:'Mia Uzumaki',weekly:350,rank:'Genin',s:0,a:0,b:0,total:350,collector:'Shigure',status:'Payé',unpaid:0,clan:'Uzumaki'},
+{id:33,name:'Yuzuki Nara',weekly:350,rank:'Genin',s:0,a:0,b:0,total:350,collector:'Rien',status:'Non payé',unpaid:0,clan:'Nara'},
+{id:34,name:'Ninken Uchiha',weekly:350,rank:'Genin',s:0,a:0,b:0,total:350,collector:'Rien',status:'Non payé',unpaid:0,clan:'Uchiha'},
+{id:35,name:'Bakyu Hyuga',weekly:350,rank:'Genin',s:0,a:1,b:0,total:650,collector:'Shigure',status:'Payé',unpaid:0,clan:'Hyuga'},
+{id:36,name:'Satsu Nara',weekly:350,rank:'Genin',s:0,a:0,b:0,total:350,collector:'Rien',status:'Non payé',unpaid:0,clan:'Nara'},
+{id:37,name:'Hika Uzumaki',weekly:350,rank:'Genin',s:0,a:2,b:3,total:1250,collector:'Shigure',status:'Payé',unpaid:0,clan:'Uzumaki'},
+{id:38,name:'Fuyuki Hyuga',weekly:350,rank:'Genin',s:0,a:0,b:0,total:350,collector:'Shigure',status:'Payé',unpaid:0,clan:'Hyuga'},
+{id:39,name:'Seigan Hyuga',weekly:350,rank:'Genin',s:0,a:0,b:0,total:350,collector:'Rien',status:'Non payé',unpaid:0,clan:'Hyuga'},
+{id:40,name:'Kushi Uzumaki',weekly:350,rank:'Genin',s:0,a:0,b:0,total:350,collector:'Rien',status:'Non payé',unpaid:0,clan:'Uzumaki'},
+{id:41,name:'Senki Nara',weekly:350,rank:'Genin',s:0,a:0,b:0,total:350,collector:'Shigure',status:'Payé',unpaid:0,clan:'Nara'}
+];
+let nextTaxId = taxRows.length;
+const RANK_WEEKLY = {Jonin:800, Chunin:550, Genin:350};
+const MISSION_RATE = {s:500, a:300, b:100};
+const KNOWN_CLANS = ['Uzumaki','Nara','Senju','Uchiha','Hyuga','Akimichi'];
+const rankOrder = {Jonin:1, Chunin:2, Genin:3};
+
+function taxFormulaTotal(weekly,s,a,b){ return (+weekly||0) + (+s||0)*MISSION_RATE.s + (+a||0)*MISSION_RATE.a + (+b||0)*MISSION_RATE.b; }
+function taxCanEdit(){ return currentUser && currentUser.username==='LeVillageoisFou' && currentUser.role==='admin'; }
+function fmt(n){ return n.toLocaleString('fr-FR'); }
+
+function updateKPIs(rows){
+  const totalPaid = rows.reduce((s,r)=>s+(r.status==='Payé'?r.total:0),0);
+  const totalUnpaid = rows.reduce((s,r)=>s+r.unpaid,0);
+  const unpaidCount = rows.filter(r=>r.unpaid>0 || r.status!=='Payé').length;
+  const clans = [...new Set(rows.map(r=>r.clan))].length;
+  const pct = Math.min(100, Math.floor((totalPaid / 2000000) * 100));
+
+  document.getElementById('kpiCitizens').textContent = rows.length;
+  document.getElementById('kpiClans').textContent = clans;
+  document.getElementById('kpiCollected').textContent = fmt(totalPaid);
+  document.getElementById('kpiUnpaid').textContent = fmt(totalUnpaid);
+  document.getElementById('kpiUnpaidCount').textContent = unpaidCount + ' citoyen' + (unpaidCount>1?'s':'');
+  document.getElementById('kpiCompliance').textContent = pct + '%';
+  document.getElementById('fireGaugeFill').style.width = pct + '%';
+}
+
+function renderTaxRegistry(){
+  const q=(document.getElementById('taxSearch')?.value||'').toLowerCase();
+  const clan=document.getElementById('taxClanFilter')?.value||'all';
+  const rank=document.getElementById('taxRankFilter')?.value||'all';
+  const rows=taxRows.filter(r=>
+    (clan==='all'||r.clan===clan) &&
+    (rank==='all'||r.rank===rank) &&
+    r.name.toLowerCase().includes(q)
+  );
+
+  updateKPIs(rows);
+
+  const groups={}; rows.forEach(r=>(groups[r.clan]??=[]).push(r));
+  const tbody = document.getElementById('taxTableBody');
+  if(!tbody) return;
+
+  if(!rows.length){ tbody.innerHTML='<tr><td colspan="11" style="text-align:center;padding:30px;opacity:.5;">Aucun ninja ne correspond.</td></tr>'; return; }
+
+  let html='';
+  Object.entries(groups).sort().forEach(([c,list])=>{
+    html+=`<tr class="tax-group-header"><td colspan="11">Clan ${c} · ${list.length} ninja${list.length>1?'s':''}</td></tr>`;
+    Object.entries(list.reduce((a,r)=>(a[r.rank]??=[]).push(r),{}))
+      .sort((a,b)=>rankOrder[a[0]]-rankOrder[b[0]])
+      .forEach(([rank,rs])=>{
+        rs.sort((x,y)=>x.name.localeCompare(y.name)).forEach(r=>{
+          const rankCls = r.rank==='Jonin'?'tax-rank-jonin':r.rank==='Chunin'?'tax-rank-chunin':'tax-rank-genin';
+          const statusCls = r.status==='Payé'?'tax-status-paid':'tax-status-unpaid';
+          const unpaidTxt = r.unpaid?` · ${fmt(r.unpaid)} impayés`:'';
+          html+=`<tr>
+            <td class="tax-name">${r.name}</td>
+            <td><span class="tax-clan-tag">${r.clan}</span></td>
+            <td><span class="tax-clan-tag ${rankCls}">${r.rank}</span></td>
+            <td class="tax-num">${fmt(r.weekly)}</td>
+            <td class="tax-center">${r.s}</td>
+            <td class="tax-center">${r.a}</td>
+            <td class="tax-center">${r.b}</td>
+            <td class="tax-num" style="font-weight:600;color:#fff;">${fmt(r.total)}</td>
+            <td>${r.collector}</td>
+            <td><span class="${statusCls}">${r.status}${unpaidTxt}</span></td>
+            <td class="tax-row-actions"><button onclick="editTaxRow(${r.id})" title="Modifier">✎</button><button onclick="deleteTaxRow(${r.id})" title="Supprimer">🗑</button></td>
+          </tr>`;
+        });
+      });
+  });
+  tbody.innerHTML=html;
+}
+
+function openTaxEditor(){
+  if(!taxCanEdit()){toast('Accès réservé au Hokage.','error');return;}
+  const el=document.getElementById('taxAdminEditor');
+  el.classList.remove('hidden');
+  resetTaxForm();
+  el.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function toggleTaxEditor(){
+  if(!taxCanEdit()){toast('Accès réservé au Hokage.','error');return;}
+  const el=document.getElementById('taxAdminEditor');
+  el.classList.toggle('hidden');
+  if(!el.classList.contains('hidden')){ resetTaxForm(); el.scrollIntoView({behavior:'smooth',block:'start'}); }
+}
+
+function buildClanOptions(){
+  const sel=document.getElementById('tfClan');
+  if(sel) sel.innerHTML=KNOWN_CLANS.map(c=>`<option value="${c}">${c}</option>`).join('')+'<option value="Autre">Autre</option>';
+}
+
+function autoFillWeekly(){ document.getElementById('tfWeekly').value=RANK_WEEKLY[document.getElementById('tfRank').value]||0; recalcTaxTotal(); }
+function autoDetectClan(){ const m=document.getElementById('tfName').value.match(/(Uzumaki|Nara|Senju|Uchiha|Hyuga|Akimichi)$/); if(m) document.getElementById('tfClan').value=m[1]; }
+function recalcTaxTotal(){ document.getElementById('tfTotal').value=taxFormulaTotal(document.getElementById('tfWeekly').value,document.getElementById('tfS').value,document.getElementById('tfA').value,document.getElementById('tfB').value); }
+function onTaxStatusChange(){ const isUnpaid=document.getElementById('tfStatus').value==='Rien'; document.getElementById('tfUnpaidWrap').style.display=isUnpaid?'':'none'; if(!isUnpaid) document.getElementById('tfUnpaid').value=0; }
+
+let currentTaxEditId=null;
+
+function resetTaxForm(){
+  currentTaxEditId=null;
+  document.getElementById('tfName').value='';
+  document.getElementById('tfClan').value='Uzumaki';
+  document.getElementById('tfRank').value='Genin';
+  document.getElementById('tfWeekly').value=RANK_WEEKLY.Genin;
+  document.getElementById('tfS').value=0; document.getElementById('tfA').value=0; document.getElementById('tfB').value=0;
+  document.getElementById('tfCollector').value='';
+  document.getElementById('tfStatus').value='Payé';
+  document.getElementById('tfUnpaid').value=0;
+  recalcTaxTotal(); onTaxStatusChange();
+  const del=document.getElementById('tfDeleteBtn'); if(del) del.disabled=true;
+}
+
+function editTaxRow(id){
+  const r=taxRows.find(x=>x.id===id); if(!r) return;
+  const el=document.getElementById('taxAdminEditor');
+  if(el.classList.contains('hidden')){ el.classList.remove('hidden'); }
+  currentTaxEditId=id;
+  document.getElementById('tfName').value=r.name;
+  document.getElementById('tfClan').value=KNOWN_CLANS.includes(r.clan)?r.clan:'Autre';
+  document.getElementById('tfRank').value=r.rank;
+  document.getElementById('tfWeekly').value=r.weekly;
+  document.getElementById('tfS').value=r.s; document.getElementById('tfA').value=r.a; document.getElementById('tfB').value=r.b;
+  document.getElementById('tfTotal').value=r.total;
+  document.getElementById('tfCollector').value=r.collector;
+  document.getElementById('tfStatus').value=r.status==='Payé'?'Payé':'Rien';
+  document.getElementById('tfUnpaid').value=r.unpaid||0;
+  onTaxStatusChange();
+  document.getElementById('tfDeleteBtn').disabled=false;
+  el.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function saveTaxEdit(){
+  if(!taxCanEdit()){toast('Accès réservé au Hokage.','error');return;}
+  const name=document.getElementById('tfName').value.trim();
+  if(!name){toast('Le nom est obligatoire.','error');return;}
+  const data={
+    name, clan:document.getElementById('tfClan').value, rank:document.getElementById('tfRank').value,
+    weekly:+document.getElementById('tfWeekly').value||0,
+    s:+document.getElementById('tfS').value||0, a:+document.getElementById('tfA').value||0, b:+document.getElementById('tfB').value||0,
+    total:+document.getElementById('tfTotal').value||0,
+    collector:document.getElementById('tfCollector').value.trim()||'Rien',
+    status:document.getElementById('tfStatus').value,
+    unpaid:+document.getElementById('tfUnpaid').value||0
+  };
+  if(currentTaxEditId!==null){ const r=taxRows.find(x=>x.id===currentTaxEditId); if(r) Object.assign(r,data); }
+  else { taxRows.push({id:nextTaxId++, ...data}); }
+  localStorage.setItem('konoha_tax_registry', JSON.stringify(taxRows));
+  renderTaxRegistry(); toast('Registre mis à jour.','success'); resetTaxForm();
+}
+
+function deleteTaxRow(id){
+  if(!taxCanEdit() || id==null) return;
+  const r=taxRows.find(x=>x.id===id); if(!r) return;
+  if(!confirm(`Supprimer ${r.name} ?`)) return;
+  taxRows=taxRows.filter(x=>x.id!==id);
+  localStorage.setItem('konoha_tax_registry', JSON.stringify(taxRows));
+  renderTaxRegistry(); toast('Ninja retiré.','success'); resetTaxForm();
+}
+
+window.addEventListener('DOMContentLoaded',()=>{
+  const saved=localStorage.getItem('konoha_tax_registry');
+  if(saved) try{ taxRows=JSON.parse(saved); nextTaxId=Math.max(...taxRows.map(r=>r.id),0)+1; }catch(e){}
+  const clans=[...new Set(taxRows.map(r=>r.clan))].sort();
+  const cf=document.getElementById('taxClanFilter');
+  if(cf) cf.innerHTML='<option value="all">Tous les clans</option>'+clans.map(c=>`<option>${c}</option>`).join('');
+  buildClanOptions();
+  renderTaxRegistry();
+  const b=document.getElementById('taxAdminToggle');
+  if(b){ b.classList.toggle('hidden',!taxCanEdit()); }
+  const addBtn=document.getElementById('taxAddBtn');
+  if(addBtn){ addBtn.classList.toggle('hidden',!taxCanEdit()); }
+});
+
+// ─── KUNAI 3D INTRO ───────────────────────────────────
+function initKunai3D() {
+  const hasSeen = localStorage.getItem('konoha_kunai_seen');
+  if (hasSeen) return;
+  localStorage.setItem('konoha_kunai_seen', '1');
+
+  const container = document.getElementById('kunai-canvas-wrap');
+  if (!container || !window.THREE) return;
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 1000);
+  camera.position.z = 18;
+
+  const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+  renderer.setSize(400, 400);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  container.appendChild(renderer.domElement);
+
+  // Lights
+  const ambient = new THREE.AmbientLight(0xffffff, 0.4);
+  scene.add(ambient);
+  const dir = new THREE.DirectionalLight(0xdc2626, 1.2);
+  dir.position.set(5, 5, 10);
+  scene.add(dir);
+  const back = new THREE.DirectionalLight(0x991b1b, 0.6);
+  back.position.set(-5, -2, -5);
+  scene.add(back);
+
+  // Kunai group
+  const kunai = new THREE.Group();
+
+  // Blade (flattened cylinder)
+  const bladeGeo = new THREE.CylinderGeometry(0.15, 0.6, 5, 8);
+  bladeGeo.scale(1, 1, 0.25);
+  const bladeMat = new THREE.MeshStandardMaterial({ color: 0xc0c0c0, metalness: 0.9, roughness: 0.2 });
+  const blade = new THREE.Mesh(bladeGeo, bladeMat);
+  blade.position.y = 2.5;
+  kunai.add(blade);
+
+  // Blade tip (cone)
+  const tipGeo = new THREE.ConeGeometry(0.6, 1.5, 8);
+  tipGeo.scale(1, 1, 0.25);
+  const tip = new THREE.Mesh(tipGeo, bladeMat);
+  tip.position.y = 5.5;
+  kunai.add(tip);
+
+  // Handle
+  const handleGeo = new THREE.CylinderGeometry(0.35, 0.35, 3.5, 12);
+  const handleMat = new THREE.MeshStandardMaterial({ color: 0x1a1a2e, metalness: 0.3, roughness: 0.7 });
+  const handle = new THREE.Mesh(handleGeo, handleMat);
+  handle.position.y = -1.75;
+  kunai.add(handle);
+
+  // Wrap rings on handle
+  for (let i = 0; i < 6; i++) {
+    const wrapGeo = new THREE.TorusGeometry(0.36, 0.04, 8, 16);
+    const wrapMat = new THREE.MeshStandardMaterial({ color: 0x8b0000, metalness: 0.5, roughness: 0.5 });
+    const wrap = new THREE.Mesh(wrapGeo, wrapMat);
+    wrap.rotation.x = Math.PI / 2;
+    wrap.position.y = -0.8 - i * 0.45;
+    kunai.add(wrap);
+  }
+
+  // Pommel ring
+  const ringGeo = new THREE.TorusGeometry(0.7, 0.08, 12, 24);
+  const ringMat = new THREE.MeshStandardMaterial({ color: 0xc0c0c0, metalness: 0.9, roughness: 0.2 });
+  const ring = new THREE.Mesh(ringGeo, ringMat);
+  ring.position.y = -3.8;
+  kunai.add(ring);
+
+  // Guard (diamond shape)
+  const guardGeo = new THREE.CylinderGeometry(0.05, 0.05, 2.2, 4);
+  guardGeo.scale(1, 1, 0.15);
+  const guardMat = new THREE.MeshStandardMaterial({ color: 0xc0c0c0, metalness: 0.9, roughness: 0.2 });
+  const guard = new THREE.Mesh(guardGeo, guardMat);
+  guard.rotation.y = Math.PI / 4;
+  guard.position.y = 0.1;
+  kunai.add(guard);
+
+  scene.add(kunai);
+
+  // Entry animation
+  container.style.right = '-400px';
+  requestAnimationFrame(() => {
+    container.style.right = '5vw';
+  });
+
+  let time = 0;
+  let opacity = 1;
+  let fadeStarted = false;
+
+  function animate() {
+    if (opacity <= 0) {
+      renderer.dispose();
+      container.remove();
+      return;
+    }
+    requestAnimationFrame(animate);
+    time += 0.015;
+    kunai.rotation.y = time * 0.8;
+    kunai.rotation.z = Math.sin(time * 0.5) * 0.15;
+    kunai.position.y = Math.sin(time * 1.2) * 0.3;
+
+    if (time > 4 && !fadeStarted) {
+      fadeStarted = true;
+      container.style.transition = 'opacity 1.5s ease';
+      container.style.opacity = '0';
+      setTimeout(() => {
+        opacity = 0;
+        renderer.dispose();
+        container.remove();
+      }, 1600);
+    }
+
+    renderer.render(scene, camera);
+  }
+  animate();
+}
+
+</script>
 </body>
 </html>
